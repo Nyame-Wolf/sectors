@@ -24,11 +24,6 @@ export default function SectorFrom() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = {
-      name,
-      option: selectedOption,
-      terms: terms_agreement,
-    };
     setName('');
     setSelectedOption('Manufacturing');
     setIsChecked(false);

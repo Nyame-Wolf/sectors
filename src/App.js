@@ -1,7 +1,7 @@
-import './App.css';
+import SectorFrom from './components/SectorForm';
 
 function App() {
-  return <div className="App">Initial Sectors</div>;
+  return <SectorFrom />;
 }
 
 export default App;

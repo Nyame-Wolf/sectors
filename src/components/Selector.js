@@ -6,7 +6,7 @@ import { getOptions } from '../redux/reducers/options';
 
 import './SectorForm.css';
 
-export default function Selector({ value, onChange }) {
+export default function Selector({ value, onChange, sector_id }) {
   const dispatch = useDispatch();
 
   const options = useSelector((state) => {
@@ -23,7 +23,6 @@ export default function Selector({ value, onChange }) {
   useEffect(() => {
     dispatch(getOptions());
   }, []);
-  console.log(options);
 
   // Render a number of spaces
   const renderSpaces = (depth) =>
@@ -52,10 +51,15 @@ export default function Selector({ value, onChange }) {
     // same level since they are both options
     return [child, ...children];
   };
-
   return (
-    <select value={value} onChange={onChange} size="5">
-      {Object.keys(options).map((id) => renderSector(options, options[id], 0))}
+    <select value={value} onChange={onChange}>
+      {Object.keys(options).map((id) => {
+        const sector = options[id];
+        if (sector.sector_id) {
+          return null;
+        }
+        return renderSector(options, options[id], 0);
+      })}
     </select>
   );
 }

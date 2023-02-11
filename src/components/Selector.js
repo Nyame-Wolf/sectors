@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getOptions } from '../redux/reducers/options';
 
-import './SectorForm.css';
-
 export default function Selector({ value, onChange, sector_id }) {
   const dispatch = useDispatch();
 

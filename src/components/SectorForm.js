@@ -6,7 +6,6 @@ import { postformData, postFormUpdate } from '../redux/reducers/formPost';
 import { getuserPreference } from '../redux/reducers/formPost';
 
 import Selector from './Selector';
-import './SectorForm.css';
 
 export default function SectorFrom() {
   const preference = useSelector((state) => state.formPost);

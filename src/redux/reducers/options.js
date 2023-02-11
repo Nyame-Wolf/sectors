@@ -1,5 +1,5 @@
-/* eslint-disable camelcase */
-/* eslint-disable no-param-reassign */
+/* eslint-disable  */
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -13,6 +13,8 @@ export const getOptions = createAsyncThunk('options/getOptions', async () => {
     headers: {
       'Content-Type': 'application/json',
     },
+    // credentials: 'include',
+    // mode: 'no-cors',
   });
   if (response.ok) {
     return response.json();

@@ -1,7 +1,11 @@
 import SectorFrom from './components/SectorForm';
 
 function App() {
-  return <SectorFrom />;
+  return (
+    <div className="app">
+      <SectorFrom />
+    </div>
+  );
 }
 
 export default App;

@@ -50,7 +50,7 @@ export default function Selector({ value, onChange, sector_id }) {
     return [child, ...children];
   };
   return (
-    <select value={value} onChange={onChange}>
+    <select value={value} onChange={onChange} size="5">
       {Object.keys(options).map((id) => {
         const sector = options[id];
         if (sector.sector_id) {

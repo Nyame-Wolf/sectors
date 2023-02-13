@@ -11,7 +11,7 @@ export default function SectorFrom() {
   const preference = useSelector((state) => state.formPost);
   const [name, setName] = useState('');
   const [nameTouched, setNameTouched] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState('Manufacturing');
   // const [selectedOptionId, setSelectedOptionId] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [error, setError] = useState('');
@@ -25,7 +25,7 @@ export default function SectorFrom() {
 
   useEffect(() => {
     setName(preference.name);
-    setSelectedOption(preference.option);
+    setSelectedOption(preference.sector);
     setIsChecked(preference.terms);
   }, [preference]);
 
@@ -63,7 +63,7 @@ export default function SectorFrom() {
     }
     const formData = {
       name,
-      option: selectedOption,
+      sector: selectedOption,
       terms: isChecked,
     };
 
@@ -110,7 +110,7 @@ export default function SectorFrom() {
         <label htmlFor="selectors">
           Sectors:
           <Selector
-            value={selectedOption}
+            value={selectedOption || preference.sector}
             onChange={handleSelectChange}
             // sector_id={id}
             id="sectors"

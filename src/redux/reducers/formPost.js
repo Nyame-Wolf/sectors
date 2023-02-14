@@ -10,7 +10,7 @@ const initialState = {
 export const postformData = createAsyncThunk(
   'user/userPreference',
   async (user_preference) => {
-    return await fetch('http://localhost:4000/user_preferences', {
+    return await fetch('https://sectors.onrender.com/user_preferences', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export const postFormUpdate = createAsyncThunk(
   'user/userPreferenceUpdate',
   async (user_preference) => {
     const id = localStorage.getItem('user_preference');
-    return await fetch(`http://localhost:4000/user_preferences/${id}`, {
+    return await fetch(`https://sectors.onrender.com/user_preferences/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export const getuserPreference = createAsyncThunk(
   'user/getUserPreference',
   async () => {
     const id = localStorage.getItem('user_preference');
-    return await fetch(`http://localhost:4000/user_preferences/${id}`, {
+    return await fetch(`https://sectors.onrender.com/user_preferences/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
